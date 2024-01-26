@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance;
+
     public class Blocker { 
         public Object key;
         public bool isInteractionBlocker;
@@ -18,9 +20,13 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField]
+    private Animator animator;
+
+    [SerializeField]
     private Transform facingDirectionMarker;
 
     private Vector2 facingDirection = new(0, 1);
+    private int facingDirectionIndex = 0;
 
     [SerializeField]
     private List<Blocker> blockers = new();
@@ -38,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void RemoveInteractionBlocker(Object key)
+    public void RemoveBlocker(Object key)
     {
         var existing = blockers.FindIndex(b => b.key == key);
         if (existing < 0)
@@ -61,7 +67,11 @@ public class PlayerMovement : MonoBehaviour
         return blockers.Any(b => b.isMovementBlocker);
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        Instance = this;
+    }
+
     void Update()
     {
         Move();
@@ -87,22 +97,29 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = /*sensitivity * Time.deltaTime * */movement * sensitivity;
 
         // determine facing direction from last pressed key
+        
         if (Input.GetKeyDown(KeyCode.A))
         {
             facingDirection = new Vector2(-1, 0);
+            facingDirectionIndex = 2;
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             facingDirection = new Vector2(1, 0);
+            facingDirectionIndex = 3;
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             facingDirection = new Vector2(0, -1);
+            facingDirectionIndex = 0;
         }
         else if (Input.GetKeyDown(KeyCode.W))
         {
             facingDirection = new Vector2(0, 1);
+            facingDirectionIndex = 1;
         }
+
+        animator.SetInteger("direction", facingDirectionIndex);
 
         if (facingDirectionMarker)
         {

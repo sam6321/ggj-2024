@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class InteractTest : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject prefab;
+
     public void DoInteract()
     {
-        if(transform.localScale.x > 1)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(2, 2, 2);
-        }
+        GameObject canvas = GameObject.Find("Canvas");
+        Instantiate(prefab, canvas.transform);
     }
 }
