@@ -15,10 +15,16 @@ public class TextBox : MonoBehaviour
     private Text text;
 
     [SerializeField]
-    private Image continueImage;
+    private AudioSource audioSource;
 
     private uint currentFragmentIndex = 0;
     private float percent = 0f;
+    private float lastChirpTime = 0f;
+
+    public void SetTextFragments(string[] fragments)
+    {
+        textFragments = fragments;
+    }
 
     private void Start()
     {
@@ -73,12 +79,17 @@ public class TextBox : MonoBehaviour
         if (percent < 1.0f)
         {
             text.text = textFragments[currentFragmentIndex][..Mathf.FloorToInt(textFragments[currentFragmentIndex].Length * percent)];
-            continueImage.color = new Color(1, 1, 1, 0.0f);
+
+            float delay = 2.0f / charsPerSecond;
+            if(lastChirpTime + delay < Time.time)
+            {
+                lastChirpTime = Time.time;
+                audioSource.PlayOneShot(audioSource.clip);
+            }
         }
         else
         {
             text.text = textFragments[currentFragmentIndex];
-            continueImage.color = new Color(1, 1, 1, Mathf.PingPong(Time.time, 1.0f));
         }
     }
 }
