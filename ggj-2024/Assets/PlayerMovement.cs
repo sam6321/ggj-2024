@@ -113,6 +113,12 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+            return;
+        }
+
         Move();
         Interact();
     }
@@ -157,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         // Check if we're actually moving right now.
         // we might be stuck against something and so should not play movement
         // sounds
-        if (Vector2.Distance(transform.position, lastFramePos) > 1f && 
+        if (Vector2.Distance(transform.position, lastFramePos) > 0.1f && 
             Time.time > lastWalkSoundTime + walkSoundDelay)
         {
             lastWalkSoundTime = Time.time;
