@@ -2988,7 +2988,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1351, y: 760, z: 1}
+  m_LocalScale: {x: 980, y: 506, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2035811224}
@@ -3401,10 +3401,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 32.901703, y: -60.563477}
-      - {x: 13.719482, y: -61.599}
-      - {x: -47.157867, y: 2.6520386}
-      - {x: -29.306122, y: 26.319153}
+    - - {x: 32.901703, y: -58.24951}
+      - {x: 22.512573, y: -51.41754}
+      - {x: -39.290375, y: 8.205566}
+      - {x: -13.108337, y: 33.26111}
+      - {x: 12.331696, y: 61.285156}
+      - {x: 62.778503, y: 119.79373}
       - {x: 85.923615, y: 148.88754}
       - {x: 110.750885, y: 217.0769}
       - {x: 153.36316, y: 243.84558}
@@ -3430,7 +3432,7 @@ PolygonCollider2D:
       - {x: 284.19226, y: 170.18182}
       - {x: 278.40433, y: 100.83923}
       - {x: 268.3943, y: 59.49234}
-      - {x: 140.77368, y: 50.76544}
+      - {x: 149.10397, y: 62.798065}
   m_UseDelaunayMesh: 0
 --- !u!212 &856482837
 SpriteRenderer:
@@ -4722,9 +4724,10 @@ GameObject:
   - component: {fileID: 1056361639}
   - component: {fileID: 1056361641}
   - component: {fileID: 1056361640}
+  - component: {fileID: 1056361642}
   m_Layer: 0
   m_Name: DarknessTrigger
-  m_TagString: Untagged
+  m_TagString: WalkSoundTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4824,6 +4827,19 @@ PolygonCollider2D:
       - {x: -134.31184, y: 89.283134}
       - {x: -162.8909, y: 149.1178}
   m_UseDelaunayMesh: 0
+--- !u!114 &1056361642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056361638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 791f159ea50c23b4dae96646eeef3c89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: 1
 --- !u!1 &1072365958
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,6 +5220,7 @@ GameObject:
   - component: {fileID: 1183651652}
   - component: {fileID: 1183651651}
   - component: {fileID: 1183651653}
+  - component: {fileID: 1183651655}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -5290,7 +5307,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.4633314, y: 0.23186126}
     oldSize: {x: 26, y: 26}
     newSize: {x: 48, y: 48}
     adaptiveTilingThreshold: 0.5
@@ -5360,6 +5377,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 1
+--- !u!95 &1183651655
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183651649}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83e2604933f22a041a3d15ac73d3bc6c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1195574535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6452,16 +6491,28 @@ PolygonCollider2D:
       - {x: -426.27338, y: -279.8426}
       - {x: -411.40585, y: -235.11122}
       - {x: -358.36807, y: -231.34215}
+      - {x: -338.47958, y: -272.82788}
       - {x: -336.71182, y: -277.01923}
-      - {x: -260.14545, y: -306.0821}
-      - {x: -196.36514, y: -284.50085}
-      - {x: -180.27515, y: -229.3332}
-      - {x: -193.5788, y: -179.80585}
-      - {x: -232.25494, y: -135.37947}
-      - {x: -286.66922, y: -70.273125}
-      - {x: -328.37823, y: -25.453865}
-      - {x: -353.53708, y: -14.511013}
-      - {x: -369.91293, y: -33.392235}
+      - {x: -310.52527, y: -307.33002}
+      - {x: -295.44376, y: -316.03485}
+      - {x: -263.385, y: -319.04028}
+      - {x: -194.51396, y: -290.05438}
+      - {x: -184.42415, y: -272.13812}
+      - {x: -172.40765, y: -237.66348}
+      - {x: -174.31024, y: -203.7983}
+      - {x: -174.50137, y: -183.08905}
+      - {x: -182.47177, y: -168.23602}
+      - {x: -211.3203, y: -158.62914}
+      - {x: -222.94884, y: -127.69502}
+      - {x: -233.18053, y: -122.88405}
+      - {x: -239.90573, y: -119.09559}
+      - {x: -258.59247, y: -100.11453}
+      - {x: -253.73126, y: -79.22905}
+      - {x: -270.65027, y: -52.625813}
+      - {x: -288.0576, y: -48.52182}
+      - {x: -317.73398, y: -75.898346}
+      - {x: -341.96725, y: -68.19505}
+      - {x: -362.50824, y: -60.69706}
       - {x: -380.26913, y: -64.52803}
       - {x: -428.32532, y: -116.326065}
       - {x: -483.84198, y: -158.72069}
@@ -8753,8 +8804,8 @@ BoxCollider2D:
   m_Offset: {x: 4.501129, y: -19.908768}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 96, y: 96}
+    pivot: {x: 0.37893268, y: 0.3828302}
+    oldSize: {x: 74, y: 84}
     newSize: {x: 48, y: 48}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

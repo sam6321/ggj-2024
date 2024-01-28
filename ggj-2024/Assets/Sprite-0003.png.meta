@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: cbd02c3b53795904bb0754d768c10be9
+guid: 06e1a02ef0172a74f8b2aecdc2c09b10
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6109760940665821438
-    second: deer_anim_0
-  - first:
-      213: 2041010384178866114
-    second: deer_anim_1
-  - first:
-      213: 5161900043388988003
-    second: deer_anim_2
+      213: -5643105228771564274
+    second: Sprite-0003_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -57,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 0.5
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -106,64 +100,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: deer_anim_0
+      name: Sprite-0003_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 4
-        width: 37
-        height: 42
-      alignment: 9
-      pivot: {x: 0.37893268, y: 0.3828302}
+        x: 0
+        y: 0
+        width: 320
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 207ae0d9bc4c53ba0800000000000000
-      internalID: -6109760940665821438
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deer_anim_1
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 4
-        width: 37
-        height: 39
-      alignment: 9
-      pivot: {x: 0.37381724, y: 0.409407}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2c76dd37120235c10800000000000000
-      internalID: 2041010384178866114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: deer_anim_2
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 4
-        width: 37
-        height: 37
-      alignment: 9
-      pivot: {x: 0.37552252, y: 0.43349823}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 36a26449db0c2a740800000000000000
-      internalID: 5161900043388988003
+      spriteID: e05ebe061b9afa1b0800000000000000
+      internalID: -5643105228771564274
       vertices: []
       indices: 
       edges: []
@@ -171,7 +123,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d7be3d25b6d7b294f83810a872410248
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -179,9 +131,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      deer_anim_0: -6109760940665821438
-      deer_anim_1: 2041010384178866114
-      deer_anim_2: 5161900043388988003
+      Sprite-0003_0: -5643105228771564274
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
