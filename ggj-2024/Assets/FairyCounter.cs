@@ -11,6 +11,9 @@ public class FairyCounter : MonoBehaviour
     public HashSet<FairyData.Fairy> Found => found;
 
     [SerializeField]
+    private HashSet<FairyData.Fairy> ignored = new();
+
+    [SerializeField]
 
     private HashSet<FriendData.Friend> foundFriends = new();
 
@@ -43,9 +46,25 @@ public class FairyCounter : MonoBehaviour
         onFairyFound.Invoke(found, total);
     }
 
+    public void IgnoreFairy(FairyData.Fairy fairy)
+    {
+        ignored.Add(fairy);
+    }
+
     public void AddFriend(FriendData.Friend friend)
     {
         foundFriends.Add(friend);
         onFriendFound.Invoke(foundFriends, totalFriends);
+    }
+
+    public bool IsSpecialEnding()
+    {
+        // only by ignoring all fairies do you get the special ending
+        return ignored.Count == total && found.Count == 0;
+    }
+
+    public bool CanExit()
+    {
+        return IsSpecialEnding() || found.Count == total;
     }
 }

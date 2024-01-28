@@ -15,4 +15,4 @@ MonoBehaviour:
   type: 2
   friendName: Spider
   description: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -220031876, guid: 2c4217db32a5b4a4a87f51a40bbc69b1, type: 3}

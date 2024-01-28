@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6837592781039135421
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2876169301025704662, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4209971424870792492, guid: 8593f4fff7d72994eafaefa37428bb4d, type: 3}
+    - target: {fileID: 3060583438108878649, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_Name
+      value: FairyDarkForest Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 783.99884
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -730.41504
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 44.772186
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934296374831578672, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6957049970985900745, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}
+      propertyPath: fairyTextBoxPrefab
+      value: 
+      objectReference: {fileID: 1221369204423896400, guid: 60da1e8111f89e64fbe11ad21c3b1579, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 53c7965f5a419ed41b57083afc5347cc, type: 3}

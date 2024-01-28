@@ -32,8 +32,11 @@ public class CollectionDisplay : MonoBehaviour
         {
             var friendData = friends.Find(f => f.type == friend);
             var index = friends.FindIndex(f => f.type == friend);
-            friendImages[index].sprite = friendData.sprite;
-            friendNames[index].text = friendData.friendName;
+            if (friendData != null && index >= 0)
+            {
+                friendImages[index].sprite = friendData.sprite;
+                friendNames[index].text = friendData.friendName;
+            }
         }
     }
 

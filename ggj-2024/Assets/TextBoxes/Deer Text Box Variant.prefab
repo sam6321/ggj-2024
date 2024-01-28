@@ -8,6 +8,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: chooseRandom
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: 8605470142087941471, guid: e45a152c0a71d294698ecbcb1053e421, type: 3}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: textFragments.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[0]'
+      value: Oh deer... you get it? Cause I'm a deer?
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[1]'
+      value: What do you say about a deer with no eyes? I'm sorry for your loss
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[2]'
+      value: I dreamed of being a pilot but I don't have hands
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[3]'
+      value: You should hurry, we're not here to fuck spiders
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: -1858737819, guid: 2c4217db32a5b4a4a87f51a40bbc69b1, type: 3}
     - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: 'textFragments.Array.data[0]'
       value: hi am deer
@@ -21,6 +53,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 282de11949386a046a62b1ba0078e2ac, type: 3}
     - target: {fileID: 5936164611391905898, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 282de11949386a046a62b1ba0078e2ac, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 282de11949386a046a62b1ba0078e2ac, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 282de11949386a046a62b1ba0078e2ac, type: 3}

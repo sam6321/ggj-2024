@@ -8,6 +8,24 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: -5258153367893903439, guid: e377a130a30e169449504ea14abeedd2, type: 3}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[0]'
+      value: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[1]'
+      value: Oh sorry
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: -1439989508, guid: 2c4217db32a5b4a4a87f51a40bbc69b1, type: 3}
     - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: 'textFragments.Array.data[0]'
       value: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque malesuada
@@ -25,6 +43,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 326d4ea9b6ea9c346952c36bc00c6b8c, type: 3}
     - target: {fileID: 5936164611391905898, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 326d4ea9b6ea9c346952c36bc00c6b8c, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 326d4ea9b6ea9c346952c36bc00c6b8c, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 326d4ea9b6ea9c346952c36bc00c6b8c, type: 3}

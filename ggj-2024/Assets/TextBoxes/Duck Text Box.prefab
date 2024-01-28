@@ -8,6 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: 5521503060725269866, guid: 53033b686607480418602357b5c9869c, type: 3}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: textFragments.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018464716888443557, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: 'textFragments.Array.data[0]'
+      value: This here is the second text fragment
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: characterPortraitSprite
+      value: 
+      objectReference: {fileID: -342398828, guid: 2c4217db32a5b4a4a87f51a40bbc69b1, type: 3}
     - target: {fileID: 5764955709918878441, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: textFragments.Array.size
       value: 0
@@ -20,6 +36,14 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 2a3931b1b50a6c3419de91326ea399ce, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ec8439440df88c4ebcfc98d9867f7d5, type: 3}
+    - target: {fileID: 7559558664764748964, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6ec8439440df88c4ebcfc98d9867f7d5, type: 3}
     - target: {fileID: 8628261668199264960, guid: 3e077e8da35e75f40b64bcc5deff7027, type: 3}
       propertyPath: m_Name
       value: Duck Text Box

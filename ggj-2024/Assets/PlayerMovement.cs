@@ -7,6 +7,19 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance;
 
+
+    [System.Serializable]
+    public class WalkSounds
+    {
+        [SerializeField]
+        private AudioClip[] clips = new AudioClip[0];
+
+        public AudioClip Random()
+        {
+            return clips[UnityEngine.Random.Range(0, clips.Length)];
+        }
+    }
+
     public class Blocker {
         public Object key;
         public bool isInteractionBlocker;
@@ -39,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField]
-    private AudioClip[] walkSoundMap = new AudioClip[0];
+    private WalkSounds[] walkSoundMap = new WalkSounds[0];
 
     [SerializeField]
     private WalkSound walkSound = WalkSound.Grass;
@@ -154,26 +167,26 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        if(IsMovementBlocked())
+        // Check if we're actually moving right now.
+        // we might be stuck against something and so should not play movement
+        // sounds
+        bool lastFrameMoving = Vector2.Distance(transform.position, lastFramePos) > 0.1f;
+        if (lastFrameMoving && Time.time > lastWalkSoundTime + walkSoundDelay)
+        {
+            lastWalkSoundTime = Time.time;
+            //audioSource.pitch = Random.Range(0.95f, 1.05f);
+            audioSource.PlayOneShot(walkSoundMap[(int)walkSound].Random());
+        }
+
+        lastFramePos = transform.position;
+
+        animator.SetBool("walking", lastFrameMoving);
+
+        if (IsMovementBlocked())
         {
             rb.velocity = Vector2.zero;
             return;
         }
-
-        // Check if we're actually moving right now.
-        // we might be stuck against something and so should not play movement
-        // sounds
-        if (Vector2.Distance(transform.position, lastFramePos) > 0.1f && 
-            Time.time > lastWalkSoundTime + walkSoundDelay)
-        {
-            lastWalkSoundTime = Time.time;
-            AudioClip clip = walkSoundMap[(int)walkSound];
-
-            audioSource.pitch = Random.Range(0.95f, 1.05f);
-            audioSource.PlayOneShot(clip);
-        }
-
-        lastFramePos = transform.position;
 
         Vector3 movement = new(0f, 0f, 0f);
 

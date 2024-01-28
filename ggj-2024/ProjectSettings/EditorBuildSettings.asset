@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Test.unity
     guid: 30071b711e28b6d4d95699fb68c82e28
+  - enabled: 1
+    path: Assets/End.unity
+    guid: 7c39e053900e57d42a8de0a8179a1878
+  - enabled: 1
+    path: Assets/EndBad.unity
+    guid: ec38b1489e99b724da6e7ee2e77c75de
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

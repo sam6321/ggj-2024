@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class TextBox : MonoBehaviour
 {
@@ -12,14 +13,45 @@ public class TextBox : MonoBehaviour
     private float charsPerSecond = 10;
 
     [SerializeField]
+    private GameObject coreTextBoxObject;
+
+    [SerializeField]
     private Text text;
+
+    [SerializeField]
+    private Text yesOrNoTextObject;
+
+    [SerializeField]
+    private Text yesTextObject;    
+    
+    [SerializeField]
+    private Text noTextObject;
+
+    [SerializeField]
+    private string yesOrNoText = "";
 
     [SerializeField]
     private AudioSource audioSource;
 
+    [SerializeField]
+    private Sprite characterPortraitSprite;
+
+    [SerializeField]
+    private Image characterPortrait;
+
+    [SerializeField]
+    private UnityEvent<bool> onTextFinished = new();
+
+    [SerializeField]
+    private bool chooseRandom = false;
+
+    public UnityEvent<bool> OnTextFinished => onTextFinished;
+
     private uint currentFragmentIndex = 0;
     private float percent = 0f;
     private float lastChirpTime = 0f;
+    private bool yes = true;
+    private float yesOrNoStartTime = 0f;
 
     public void SetTextFragments(string[] fragments)
     {
@@ -28,6 +60,18 @@ public class TextBox : MonoBehaviour
 
     private void Start()
     {
+        if(characterPortraitSprite)
+        {
+            characterPortrait.sprite = characterPortraitSprite;
+            characterPortrait.gameObject.SetActive(true);
+        }
+        else
+        {
+            var rt = coreTextBoxObject.GetComponent<RectTransform>();
+            rt.offsetMin -= new Vector2(64, 0);
+            rt.offsetMax -= new Vector2(64, 0);
+        }
+
         currentFragmentIndex = 0;
         percent = 0f;
 
@@ -37,7 +81,15 @@ public class TextBox : MonoBehaviour
             textFragments = new string[1] { "" };
         }
 
-        for(int i = 0; i < textFragments.Length; i++)
+        if (chooseRandom)
+        {
+            textFragments = new string[1]
+            {
+                textFragments[Random.Range(0, textFragments.Length)]
+            };
+        }
+
+        for (int i = 0; i < textFragments.Length; i++)
         {
             textFragments[i] = textFragments[i].Replace("\\n", "\n");
         }
@@ -56,6 +108,12 @@ public class TextBox : MonoBehaviour
 
     private void Update()
     {
+        if (yesOrNoTextObject.gameObject.activeSelf)
+        {
+            UpdateYesOrNo();
+            return;
+        }
+
         percent = Mathf.Min(percent + Time.deltaTime * charsPerSecond / textFragments[currentFragmentIndex].Length, 1.0f);
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -69,7 +127,14 @@ public class TextBox : MonoBehaviour
                 currentFragmentIndex++;
                 if (currentFragmentIndex > textFragments.Length - 1)
                 {
-                    Destroy(gameObject);
+                    if(yesOrNoText == "")
+                    {
+                        Finished(false);
+                    }
+                    else
+                    {
+                        StartYesOrNo();
+                    }
                     return;
                 }
                 percent = 0f;
@@ -90,6 +155,47 @@ public class TextBox : MonoBehaviour
         else
         {
             text.text = textFragments[currentFragmentIndex];
+        }
+    }
+
+    private void Finished(bool result)
+    {
+        onTextFinished.Invoke(result);
+        Destroy(gameObject);
+    }
+
+    private void StartYesOrNo()
+    {
+        text.gameObject.SetActive(false);
+        yesOrNoTextObject.gameObject.SetActive(true);
+        yesOrNoTextObject.text = yesOrNoText;
+        yesTextObject.gameObject.SetActive(true);
+        noTextObject.gameObject.SetActive(true);
+        yesOrNoStartTime = Time.time;
+    }
+
+    private void UpdateYesOrNo()
+    {
+        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S))
+        {
+            yes = !yes;
+        }
+
+        if(yes)
+        {
+            yesTextObject.text = "Yes <";
+            noTextObject.text = "No";
+        }
+        else
+        {
+            yesTextObject.text = "Yes";
+            noTextObject.text = "No <";
+        }
+
+        // delay for a sec so that they don't cycle through the text too fast
+        if (Input.GetKeyDown(KeyCode.E) && Time.time > yesOrNoStartTime + 0.5f)
+        {
+            Finished(yes);
         }
     }
 }
